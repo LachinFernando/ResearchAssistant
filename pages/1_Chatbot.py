@@ -1,5 +1,6 @@
 from openai import OpenAI
 import streamlit as st
+from config import OPENAI_CHAT_MODEL
 
 if "login" not in st.session_state:
     st.session_state.login = False
@@ -11,7 +12,7 @@ if st.session_state.login:
     client = OpenAI(api_key= st.secrets["OPENAI_API_KEY"])
 
     if "openai_model" not in st.session_state:
-        st.session_state["openai_model"] = "gpt-4"
+        st.session_state["openai_model"] = OPENAI_CHAT_MODEL
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
