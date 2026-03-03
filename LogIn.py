@@ -13,7 +13,7 @@ else:
         if not password:
             st.error("Please Type the Password", icon = "🚨")
         else:
-            if password == st.secrets["PASSWORD"]:
+            if password == st.secrets["admin"]["PASSWORD"]:
                 st.session_state.login = True
                 st.toast("Login Successful 🤩")
                 st.success("LogIn Successfull")
