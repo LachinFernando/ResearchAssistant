@@ -1,3 +1,4 @@
+import os
 from openai import OpenAI
 import streamlit as st
 from config import OPENAI_CHAT_MODEL
@@ -5,11 +6,16 @@ from config import OPENAI_CHAT_MODEL
 if "login" not in st.session_state:
     st.session_state.login = False
 
+# Collect constants
+os.environ["OPENAI_API_KEY"] =  st.secrets["llm"]["OPENAI_API_KEY"]
+
+
 st.title("Research Assistant 🤖")
+
 
 if st.session_state.login:
     # set openai key
-    client = OpenAI(api_key= st.secrets["OPENAI_API_KEY"])
+    client = OpenAI(api_key= os.environ["OPENAI_API_KEY"] )
 
     if "openai_model" not in st.session_state:
         st.session_state["openai_model"] = OPENAI_CHAT_MODEL

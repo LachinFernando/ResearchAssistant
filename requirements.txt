@@ -1,1 +1,5 @@
-openai==1.55.3
+numpy
+openai
+PyPDF2
+streamlit
+python-docx
