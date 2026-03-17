@@ -1,1 +1,1 @@
-OPENAI_CHAT_MODEL = "gpt-5-mini-2025-08-07"
+OPENAI_CHAT_MODEL = "gpt-4o"
